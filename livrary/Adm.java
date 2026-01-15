@@ -162,7 +162,7 @@ public class Adm{
         int escolha;
         Scanner sc = new Scanner(System.in);
         
-        System.out.println("Seja bem vindo a área de administrador!\n");
+        System.out.println("\n\nSeja bem vindo a área de administrador!");
         
         do{
             System.out.println("\nEscolha a biblioteca que deseja gerenciar");
