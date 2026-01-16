@@ -48,31 +48,30 @@ public class Aluno{
     }
     
     //specific methods
-     public void addBook(){
+     public void addBook(List<Book> bks){
         this.books = new ArrayList<>();
         Book book = new Book();
         System.out.println("Escreva o titulo do livro que deseja: ");
         String title = sc.nextLine();
         
         //criação da biblioteca
-        List<Book> livrary = new ArrayList<>();
-        livrary=book.createdBooks();
+        
         //booleano de verificação
         boolean verificarStatus= true;
         boolean verificarLivro = true;
         
-        for(int i=0; i< livrary.size(); i++){
+        for(int i=0; i< bks.size(); i++){
             
             //verificando se o livro está na biblioteca
-            if(title.equals(livrary.get(i).getTitle())){
+            if(title.equals(bks.get(i).getTitle())){
                 //verificando se o livro está disponível
-                if(livrary.get(i).isStatus()){
+                if(bks.get(i).isStatus()){
                     //adicionando livro a sua biblioteca
-                    this.books.add(livrary.get(i));
+                    this.books.add(bks.get(i));
                     //alterando o statuso do livro para falso
-                    livrary.get(i).setStatus(false);
+                    bks.get(i).setStatus(false);
                     //exibindo mensagem de sucesso
-                    System.out.println("O livro " + livrary.get(i).getTitle() + " de " + livrary.get(i).getAuthor() + " foi adicionado a sua biblioteca");
+                    System.out.println("O livro " + bks.get(i).getTitle() + " de " + bks.get(i).getAuthor() + " foi adicionado a sua biblioteca");
                     verificarStatus = false;
                 }
             verificarLivro = false;    
@@ -141,7 +140,7 @@ public class Aluno{
             esc = sca.nextInt();
             
             if(esc == 1){
-                addBook();
+                addBook(Main.listBook);
             }else if(esc ==2){
                 returnBook();
             }else if(esc ==3){
