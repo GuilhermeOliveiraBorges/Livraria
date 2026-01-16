@@ -10,6 +10,27 @@ public class Main {
     static List<Book> listBook = new ArrayList<>();
     static Aluno student;    
             
+    
+    public static void passwordLoop(){
+        int choose;
+        Scanner scanner = new Scanner(System.in);
+        listBook=Book.createdBooks();
+        student = new Aluno();
+        do{
+            System.out.println("\nIniciando programa... \n1-Entrar \n2-Fechar");
+            choose=scanner.nextInt();
+            
+            if(choose==1){
+                passwordSystem();
+            }else if(choose ==2){
+                
+            }else{
+                System.out.println("Escolha um dos valores exibidos");
+            }
+        }while(choose!=2);
+    }
+    
+    
     public static void passwordSystem(){
        
             //instanciando pre requisitos
@@ -38,8 +59,6 @@ public class Main {
             }
         
             //acesso ao usuário
-            
-            
             //testando cada usuário da lista
             for(int i=0; i<listStudent.size(); i++){
                 //verificando cada login de usuário
@@ -65,24 +84,6 @@ public class Main {
             
     }
     
-    public static void passwordLoop(){
-        int choose;
-        Scanner scanner = new Scanner(System.in);
-        listBook=Book.createdBooks();
-        student = new Aluno();
-        do{
-            System.out.println("\nIniciando programa... \n1-Entrar \n2-Fechar");
-            choose=scanner.nextInt();
-            
-            if(choose==1){
-                passwordSystem();
-            }else if(choose ==2){
-                
-            }else{
-                System.out.println("Escolha um dos valores exibidos");
-            }
-        }while(choose!=2);
-    }
     
     public static void main(String[] args) {
         passwordLoop();

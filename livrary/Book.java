@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Book {
     private String title, author, type;
-    private static boolean status;
+    private boolean status;
     private String isbn;
     
     
