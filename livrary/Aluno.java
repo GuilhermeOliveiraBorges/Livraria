@@ -49,7 +49,7 @@ public class Aluno{
     
     //specific methods
      public void addBook(List<Book> bks){
-        this.books = new ArrayList<>();
+        getBooks();
         Book book = new Book();
         System.out.println("Escreva o titulo do livro que deseja: ");
         String title = sc.nextLine();
